@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie search app</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+  <script src='JS/app.js'></script>
+  <script src='JS/controllers.js'></script>
+  <script src='JS/directives.js'></script>
+  <script src='JS/filters.js'></script>
+  <script src='JS/services.js'></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="MovieController">
+
+
+<form>
+
+<div class="container-fluid outerdiv" >
+  <div class="animated zoomInRight">
+    <div class="input-group search-bar">
+
+      <input type="text" ng-model='searchTerm' class="form-control" placeholder="Enter full movie name" autofocus />
+      <a class="input-group-addon bar-style" ng-click="fetch(searchTerm)"><i class="glyphicon glyphicon-search"></i></a>
+    <div ng-repeat='movie in movies'>
+      {{movie}}
+    </div>
+    </div>
+  </div>
+</div>
+</form>
+</body>
+</html>
