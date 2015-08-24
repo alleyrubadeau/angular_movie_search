@@ -16,23 +16,19 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-<body ng-controller="MovieController">
+<body ng-controller='MovieController'>
 
-
-<form>
-
-<div class="container-fluid outerdiv" >
-  <div class="animated zoomInRight">
-    <div class="input-group search-bar">
-
-      <input type="text" ng-model='searchTerm' class="form-control" placeholder="Enter full movie name" autofocus />
-      <a class="input-group-addon bar-style" ng-click="fetch(searchTerm)"><i class="glyphicon glyphicon-search"></i></a>
-    <div ng-repeat='movie in movies'>
-      {{movie}}
+  <form>
+    <div class="container-fluid outerdiv" >
+      <div class="animated zoomInRight">
+        <div class="input-group search-bar">
+          <input type="text" ng-model='searchTerm' class="form-control" placeholder="Enter full movie name" autofocus />
+          <a class="input-group-addon bar-style" ng-click="fetch(searchTerm)"><i class="glyphicon glyphicon-search"></i></a>
+        </div>
+      </div>
     </div>
-    </div>
-  </div>
-</div>
-</form>
+  </form>
+
+  <div ng-view></div>
 </body>
 </html>

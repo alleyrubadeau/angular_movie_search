@@ -5,25 +5,14 @@ app.controller('MovieController', function($scope, $http){
     $http.get("http://www.omdbapi.com/?s=" + searchTerm).then(function(data){
     $scope.movies = data.data.Search;
     console.log($scope.movies)
-});
-
-    // var pendingTask;
-    // if($scope.search === undefined){
-    //   $scope.search = search
-    //   fetch();
-    // }
+    });
   }
-  })
+})
 
-  // app.controller('MovieController', function($scope, $http) {
-  //   function fetchId () {
-  //   $http.get("http://www.omdbapi.com/?i=").then(function(data){
-  //       $scope.search = data.data;
-  //   });
-  //   var pendingTask;
-  //   if($scope.search === undefined){
-  //     $scope.search = search
-  //     fetch();
-  //   }
-  // }
-  // })
+app.controller('ShowController', function ($scope, $http, $routeParams) {
+  $scope.seeResults = {};
+  $http.get("http://www.omdbapi.com/?i=" + $routeParams.id).then(function(data){
+      $scope.seeResults = data.data;
+      console.log('RESULTS = ', $scope.seeResults.Title)
+    })
+})
