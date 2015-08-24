@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute'])
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'partials/main.html',
@@ -10,8 +10,8 @@ app.config(function($routeProvider) {
     templateUrl: 'partials/show.html',
     controller: 'ShowController'
   })
-  // .when( '/:templatePath*', {
-  //   templateUrl: 'partials/main.html',
-  //   controller: 'MovieController'
-  // })
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  })
 })

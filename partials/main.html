@@ -1,5 +1,8 @@
 <div ng-repeat='movie in movies'>
+<!-- Sugest making these h tags vice li -->
   <li>{{movie.Title}}</li>
   <li>{{movie.Year}}</li>
   <li><a href="/#/{{movie.imdbID}}">{{movie.imdbID}}</a></li>
+
+  <!-- Why make the id the link (or display it at all) -->
 </div>

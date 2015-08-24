@@ -12,7 +12,8 @@ app.controller('MovieController', function($scope, $http){
 app.controller('ShowController', function ($scope, $http, $routeParams) {
   $scope.seeResults = {};
   $http.get("http://www.omdbapi.com/?i=" + $routeParams.id).then(function(data){
+      //this seems to be getting back results for all the movies, not just the one I selected
       $scope.seeResults = data.data;
-      console.log('RESULTS = ', $scope.seeResults.Title)
+      console.log('RESULTS = ', $scope.seeResults)
     })
 })
